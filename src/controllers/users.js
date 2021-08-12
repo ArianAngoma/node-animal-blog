@@ -1,3 +1,5 @@
+const short = require('short-uuid')
+
 const Animals = require("../models/user");
 
 const getUsers = async (req, res) => {
@@ -24,7 +26,7 @@ const getUsers = async (req, res) => {
 
     console.log(topUsers);
 
-    res.render('users',{
+    res.render('users', {
         users: topUsers
     })
 }
@@ -34,8 +36,24 @@ const viewNewUser = (req, res) => {
 }
 
 const createNewUser = (req, res) => {
-    console.log(req.body);
-    res.send('Holasd')
+    const {name, surname, age, points, animals} = req.body;
+    const users = new Animals();
+    const user = {
+        id: short.generate(),
+        name: {
+            given: name,
+            surname
+        },
+        age,
+        points,
+        animals,
+        isActive: true
+    }
+
+    // Guardar en la DB (Json)
+    users.addUser(user)
+
+    res.redirect('users');
 }
 
 module.exports = {

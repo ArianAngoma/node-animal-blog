@@ -8,6 +8,18 @@ class User {
         this.readDB();
     }
 
+    addUser(user) {
+        this.users.push(user);
+        this.saveDB();
+    }
+
+    saveDB() {
+        const load = {
+            users: this.users
+        }
+        fs.writeFileSync(this.file, JSON.stringify(load));
+    }
+
     readDB() {
         if (!fs.existsSync(this.file)) return [];
         const info = fs.readFileSync(this.file, {encoding: 'utf-8'})
