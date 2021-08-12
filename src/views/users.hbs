@@ -1,18 +1,15 @@
 <div class="row">
     <div class="col-md-8">
-        <h1>Users of {{animal}}</h1>
+        <h1>Top 10 users of {{animal}}</h1>
         {{#if users}}
             <ul class="list-group" style="height: 70vh; overflow-y: auto;" id="messages">
                 {{#each users}}
 
                     <li class="list-group-item list-group-item-info list-group-item-action">
                         <p>{{name.given}} {{name.surname}}</p>
-                        {{!--<span>{{hideNumber to}}</span>
-                        <span>{{hideNumber from}}</span>--}}
 
-                        <span>Id:{{_id}}</span>
-                        <span>Para:{{to}}</span>
-                        <span>De:{{from}}</span>
+                        <span>Points: {{points}}</span> -
+                        <span>Age: {{age}}</span>
                     </li>
                 {{/each}}
             </ul>
