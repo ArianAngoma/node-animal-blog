@@ -37,3 +37,24 @@ Open [http://localhost:3000](http://localhost:3000) and take a look around.
 ### ANIMALS [http://localhost:3000](http://localhost:3000)
 
 Shows all the animals that are registered in the DB (JSON).
+
+![](https://raw.githubusercontent.com/ArianAngoma/node-animal-blog/main/screenshots/index.png)
+
+### TOP 10 USERS OF ANIMAL [http://localhost:3000/user-by-animal?animal=cat](http://localhost:3000/user-by-animal?animal=cat)
+
+Shows the 10 users who have the selected animal ordered by their points.
+
+![](https://raw.githubusercontent.com/ArianAngoma/node-animal-blog/main/screenshots/users-by-animal.png)
+
+### TOP 25 USER [http://localhost:3000/users](http://localhost:3000/users)
+
+Muestra las 25 mejores usuarios ordenadas por sus puntos.
+Option to create and delete a user from the DB (JSON).
+
+![](https://raw.githubusercontent.com/ArianAngoma/node-animal-blog/main/screenshots/top-users.png)
+
+### CREATE NEW USER [http://localhost:3000/new-user](http://localhost:3000/new-user)
+
+You can create a new user by entering the corresponding data.
+
+![](https://raw.githubusercontent.com/ArianAngoma/node-animal-blog/main/screenshots/create-new-users.png)
