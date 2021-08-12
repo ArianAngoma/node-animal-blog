@@ -8,6 +8,11 @@ class User {
         this.readDB();
     }
 
+    deleteUser(id) {
+        this.users = this.users.filter(user => user.id !== id);
+        this.saveDB();
+    }
+
     addUser(user) {
         this.users.push(user);
         this.saveDB();

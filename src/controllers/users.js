@@ -24,8 +24,6 @@ const getUsers = async (req, res) => {
     // Obtener los 25 primero usuarios
     const topUsers = isActiveUser.slice(0, 25);
 
-    console.log(topUsers);
-
     res.render('users', {
         users: topUsers
     })
@@ -56,8 +54,15 @@ const createNewUser = (req, res) => {
     res.redirect('users');
 }
 
+const deleteUser = async (req, res) => {
+    const users = new Animals();
+    await users.deleteUser(req.params.id);
+    res.redirect('/users');
+}
+
 module.exports = {
     getUsers,
     viewNewUser,
-    createNewUser
+    createNewUser,
+    deleteUser
 }
