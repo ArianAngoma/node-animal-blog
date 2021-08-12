@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-8">
+        <h1>Animales</h1>
+        {{#if animals}}
+            <ul class="list-group" style="height: 70vh; overflow-y: auto;" id="messages">
+                {{#each animals}}
+                    <form action="/user" method="get">
+                        <li class="list-group-item list-group-item-info list-group-item-action">
+                            <input type="text" name="animal" class="form-control" value="{{this}}" readonly>
+                            <button class="btn btn-primary btn-sm">
+                                View users
+                            </button>
+                        </li>
+                    </form>
+                {{/each}}
+            </ul>
+        {{else}}
+            <p>No animals</p>
+        {{/if}}
+    </div>
+</div>
