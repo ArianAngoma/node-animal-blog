@@ -21,7 +21,7 @@ cd node-animal-blog
 npm install
 ```
 
-## Steps for read-only access
+## Steps to run the application
 
 To start the express server, run the following
 
