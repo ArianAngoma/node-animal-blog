@@ -10,6 +10,7 @@ class Server {
 
         this.path = {
             animals: '',
+            usersByAnimal: '',
             users: ''
         }
 
@@ -49,6 +50,7 @@ class Server {
 
     routes() {
         this.app.use(this.path.animals, require('../routes/animals'));
+        this.app.use(this.path.usersByAnimal, require('../routes/users-by-animal'));
         this.app.use(this.path.users, require('../routes/users'));
     }
 

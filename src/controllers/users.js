@@ -1,15 +1,12 @@
 const Animals = require("../models/user");
 
-const getUsersByAnimal = async (req, res) => {
-    const {animal} = req.query;
-
+const getUsers = async (req, res) => {
     let users = [];
     const user = new Animals();
 
-    // Recorrer el arreglo user para poder agregar los usuarios que tengan el animal
+    // Reccorrer el arreglo
     for (let u of user.users) {
-        // Insertar todos los usuarios que correspondan al animal
-        if (u.animals.includes(animal)) users.push(u);
+        users.push(u);
     }
 
     // Ordenar usuarios por points
@@ -22,15 +19,27 @@ const getUsersByAnimal = async (req, res) => {
     // Filtrar usuarios activos
     const isActiveUser = users.filter(u => u.isActive === true);
 
-    // Obtener los 10 primero usuarios
-    const shortUser = isActiveUser.slice(0, 10);
+    // Obtener los 25 primero usuarios
+    const topUsers = isActiveUser.slice(0, 25);
 
-    res.render('users', {
-        users: shortUser,
-        animal
-    });
+    console.log(topUsers);
+
+    res.render('users',{
+        users: topUsers
+    })
+}
+
+const viewNewUser = (req, res) => {
+    res.render('new-user');
+}
+
+const createNewUser = (req, res) => {
+    console.log(req.body);
+    res.send('Holasd')
 }
 
 module.exports = {
-    getUsersByAnimal
+    getUsers,
+    viewNewUser,
+    createNewUser
 }

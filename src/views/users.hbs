@@ -1,20 +1,30 @@
-<div class="row">
-    <div class="col-md-8">
-        <h1>Top 10 users of {{animal}}</h1>
-        {{#if users}}
-            <ul class="list-group" style="height: 70vh; overflow-y: auto;" id="messages">
-                {{#each users}}
+<table class="table table-success table-striped">
+    <h1>Top 25 Users</h1>
+    <a type="button" class="btn btn-outline-primary" href="/new-user">Create new User</a>
 
-                    <li class="list-group-item list-group-item-info list-group-item-action">
-                        <p>{{name.given}} {{name.surname}}</p>
-
-                        <span>Points: {{points}}</span> -
-                        <span>Age: {{age}}</span>
-                    </li>
-                {{/each}}
-            </ul>
-        {{else}}
-            <p>No users</p>
-        {{/if}}-->
-    </div>
-</div>
+    {{#if users}}
+        <thead>
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">surname</th>
+            <th scope="col">age</th>
+            <th scope="col">points</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each users}}
+            <tr>
+                <td>{{name.given}}</td>
+                <td>{{name.surname}}</td>
+                <td>{{age}}</td>
+                <td>{{points}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-danger">Delete</button>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    {{else}}
+        <p>No users</p>
+    {{/if}}
+</table>
