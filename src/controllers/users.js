@@ -12,9 +12,18 @@ const getUsersByAnimal = async (req, res) => {
         if (u.animals.includes(animal)) users.push(u);
     }
 
-    console.log(users);
+    // Ordenar usuarios por points
+    users.sort((a, b) => {
+        if (a.points > b.points) return -1;
+        if (a.points < b.points) return 1;
+        return 0;
+    })
+
+    // Obtener los 10 primero usuarios
+    const shortUser = users.slice(0, 10);
+
     res.render('users', {
-        users,
+        users: shortUser,
         animal
     });
 }
