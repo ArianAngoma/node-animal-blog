@@ -17,10 +17,13 @@ const getUsersByAnimal = async (req, res) => {
         if (a.points > b.points) return -1;
         if (a.points < b.points) return 1;
         return 0;
-    })
+    });
+
+    // Filtrar usuarios activos
+    const isActiveUser = users.filter(u => u.isActive === true);
 
     // Obtener los 10 primero usuarios
-    const shortUser = users.slice(0, 10);
+    const shortUser = isActiveUser.slice(0, 10);
 
     res.render('users', {
         users: shortUser,
