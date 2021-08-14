@@ -45,6 +45,8 @@ To see a report of all tests performed, run the following
 npm run test:coverage
 ```
 
+![](https://raw.githubusercontent.com/ArianAngoma/node-animal-blog/main/screenshots/test.png)
+
 ## Routes
 
 ### ANIMALS [http://localhost:3000](http://localhost:3000)
