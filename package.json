@@ -5,8 +5,17 @@
   "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
-    "start:dev": "nodemon src/app.js"
+    "start:dev": "nodemon src/app.js",
+    "test": "jest --runInBand",
+    "test:coverage": "jest --coverage"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [
+    "jest",
+    "express"
+  ],
   "author": "Arian Angoma Vilchez",
   "license": "ISC",
   "dependencies": {
@@ -17,5 +26,9 @@
     "express-handlebars": "^5.3.3",
     "morgan": "^1.10.0",
     "short-uuid": "^4.2.0"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "supertest": "^6.1.5"
   }
 }
