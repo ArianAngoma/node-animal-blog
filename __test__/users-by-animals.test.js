@@ -12,7 +12,7 @@ afterAll((done) => {
 });
 
 describe('GET /user-by-animal', () => {
-    it('should return the sight of all animals', async () => {
+    it('should return the top 10 users who have the animal', async () => {
         const response = await request(server.app).get('/user-by-animal');
 
         expect(response.error).toBe(false);
