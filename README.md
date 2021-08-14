@@ -31,6 +31,19 @@ npm run start:dev
 
 Open [http://localhost:3000](http://localhost:3000) and take a look around.
 
+## Steps to test the application
+
+To run the tests, run the following
+
+```bash
+npm test
+```
+
+To see a report of all tests performed, run the following
+
+```bash
+npm run test:coverage
+```
 
 ## Routes
 
